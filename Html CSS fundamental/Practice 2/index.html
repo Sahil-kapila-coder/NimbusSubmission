@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking UI</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .bank-card {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 280px;
+    }
+
+    .balance {
+        font-size: 1.8rem;
+        
+        color: #4caf50;
+        margin-bottom: 1.5rem;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        margin: 0.5rem 0;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+
+    .deposit {
+        background-color: #4caf50;
+    }
+  .withdraw {
+        background-color: #f44336;
+    }
+@media (max-width: 400px) {
+        .bank-card {
+            width: 90%;
+            padding: 1.5rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="bank-card">
+    <div class="balance">$0</div>
+    <button class="deposit">Deposit</button>
+    <button class="withdraw">Withdraw</button>
+</div>
+
+</body>
+</html>
