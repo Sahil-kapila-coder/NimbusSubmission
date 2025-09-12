@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Product Filter</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #333; }
+    select { padding: 8px; font-size: 16px; margin-bottom: 20px; }
+    .products { display: flex; flex-wrap: wrap; gap: 15px; }
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      width: 150px;
+      text-align: center;
+      background-color: #f9f9f9;
+      transition: 0.3s;
+    }
+    .product:hover {
+      background-color: #e6f7ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Product Filter</h1>
+
+  <!-- Dropdown Menu -->
+  <label for="filter">Filter by Category: </label>
+  <select id="filter">
+    <option value="all">All</option>
+    <option value="shoes">Shoes</option>
+    <option value="shirts">Shirts</option>
+    <option value="gadgets">Gadgets</option>
+  </select>
+
+  <!-- Product List -->
+  <div class="products" id="productList">
+    <div class="product" data-category="shoes">Nike Air Max</div>
+    <div class="product" data-category="shoes">Adidas Running</div>
+    <div class="product" data-category="shirts">Polo T-Shirt</div>
+    <div class="product" data-category="shirts">Formal Shirt</div>
+    <div class="product" data-category="gadgets">Smartphone</div>
+    <div class="product" data-category="gadgets">Smartwatch</div>
+    <div class="product" data-category="gadgets">Wireless Earbuds</div>
+  </div>
+
+  <script>
+    // Select dropdown and product list
+    const filter = document.getElementById("filter");
+    const products = document.querySelectorAll(".product");
+
+    // Event listener for dropdown
+    filter.addEventListener("change", () => {
+      const selectedCategory = filter.value;
+
+      products.forEach(product => {
+        // Show all if "all" is selected, else filter by category
+        if (selectedCategory === "all" || product.dataset.category === selectedCategory) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
